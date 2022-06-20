@@ -15,7 +15,7 @@ function App() {
 
     <BrowserRouter>
       <Routes>
-          <Route path="neeraj/:id" element={<Profile />}></Route>
+          <Route path="portfolio/:id" element={<Profile />}></Route>
       </Routes>
     </BrowserRouter>
   );

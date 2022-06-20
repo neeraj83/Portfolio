@@ -9,16 +9,15 @@ Modal.setAppElement('#root');
 
 const customStyles = {
     content: {
-      top: '50%',
-      left: '50%',
-      right: 'auto',
-      bottom: 'auto',
-      marginRight: '-50%',
-      transform: 'translate(-50%, -50%)',
-      borderColor: '#000',
+    top: '0%',
+    left: '0%',
+    right: '0',
+    bottom: '0',
+    //   marginRight: '-50%',
+    //   transform: 'translate(-50%, -50%)',
+    //   borderColor: '#000',
     },
 };
-
 
 function Porfolio(props) {
 
@@ -28,6 +27,7 @@ function Porfolio(props) {
     const [isLoading, setIsLoading] = useState(true);
     const [modalIsOpen, setIsOpen] = useState(false);
     const [modalData, setModalData] = useState({});
+    
     
     useEffect(() => {
         axios
@@ -44,7 +44,8 @@ function Porfolio(props) {
                 setIsLoading(false);
             });
     }, [])
-    
+
+ 
     /** 
      * @variable getItems 
      * @type [Array] Html Content as Thumbnails
@@ -81,12 +82,17 @@ function Porfolio(props) {
     const preivewProtfolio = (item, currentIndex) => {
         setModalData({...item, currentIndex});
         setIsOpen(true);
-    }
+
+        // // document.body.style.overflow = 'hidden';
         
+    }
+
+
+      
     return (    
-        <div className={ "place-content-center " + (isLoading ? " " : " grid grid-cols-2 gap-2 ")}>
+        <div className={ "place-content-center " + (isLoading ? " " : "grid grid-cols-1 gap-2 sm:grid-cols-1 gap-1 m-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2")}>
             { isLoading ? (
-                <div className="text-center h-52 p-5">
+                <div className="text-center h-52 p-5 ">
                   <button type="button" className="align-middle inline-flex items-center px-4 py-2 font-semibold leading-6 text-sm shadow rounded-md transition ease-in-out duration-150 cursor-not-allowed" disabled="">
                         <svg className="animate-spin -ml-1 mr-3 h-5 w-5 " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                             <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>

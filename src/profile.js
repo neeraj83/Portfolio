@@ -7,8 +7,6 @@ import SiteFooter from './Footer/index';
 
 function Profile() {
 
-    
-
     const {id} = useParams();
   
     const [user, setUser] = useState([]);
@@ -38,7 +36,7 @@ function Profile() {
                         <Porfolio userId={id} />  
                     </div>
                     <div className='bg-black text-white'>
-                        <div className="container mx-auto  lg">
+                        <div className="container mx-auto lg">
                             <SiteFooter user={user} />
                         </div>
                     </div>
