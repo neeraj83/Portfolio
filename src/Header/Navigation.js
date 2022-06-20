@@ -12,11 +12,12 @@ function Navigator(props) {
   console.log(section, 'props')
     return (    
       <div className="m-6 text-center text-2xl  flex flex-col md:flex-row text-xl justify-between lg:justify-center xl:justify-center 2xl:place-items-center">
-          <a  target={`_blank`} href={user.resume} className={defaultClass}>Resume</a>
-          <a href={`mailto:${user.email}`} className={`ml-0 sm:ml-0 md:ml-0 lg:ml-10 xl:ml-10 2xl:ml-10 ${defaultClass}`}>E-Mail</a>
-          <a target={`_blank`} href={user.dribble} className={`ml-0 sm:ml-0 md:ml-0 lg:ml-10 xl:ml-10 2xl:ml-10 ${defaultClass}`}>Dribbble</a>
-          <a target={`_blank`} href={user.linkedin} className={`ml-0 sm:ml-0 md:ml-0 lg:ml-10 xl:ml-10 2xl:ml-10 ${defaultClass}`}>LinkedIn</a>
-          <a target={`_blank`} href={user.twitter} className={`ml-0 sm:ml-0 md:ml-0 lg:ml-10 xl:ml-10 2xl:ml-10 ${defaultClass}`}>Twitter</a>
+          {/* <a  target={`_blank`} href={user.resume} className={defaultClass}>Resume</a> */}
+          <a target={`_blank`} href={user.resume} className={`mb-4 ${defaultClass}`}>Resume</a>
+          <a href={`mailto:${user.email}`} className={`ml-0 sm:ml-0 md:ml-0 lg:ml-10 xl:ml-10 2xl:ml-10 mb-4 ${defaultClass}`}>E-Mail</a>
+          <a target={`_blank`} href={user.dribble} className={`ml-0 sm:ml-0 md:ml-0 lg:ml-10 xl:ml-10 2xl:ml-10 mb-4 ${defaultClass}`}>Dribbble</a>
+          <a target={`_blank`} href={user.linkedin} className={`ml-0 sm:ml-0 md:ml-0 lg:ml-10 xl:ml-10 2xl:ml-10 mb-4 ${defaultClass}`}>LinkedIn</a>
+          <a target={`_blank`} href={user.twitter} className={`ml-0 sm:ml-0 md:ml-0 lg:ml-10 xl:ml-10 2xl:ml-10 mb-4 ${defaultClass}`}>Twitter</a>
       </div>
     )  }
   
