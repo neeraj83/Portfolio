@@ -83,11 +83,11 @@ function Porfolio(props) {
         setModalData({...item, currentIndex});
         setIsOpen(true);
 
-    //   document.body.style.overflow = 'hidden';
-        
+        document.body.classList.add('overflow-hidden');
+       
     }
 
-
+    
       
     return (    
         <div className={ "place-content-center " + (isLoading ? " " : "grid grid-cols-1 gap-2 sm:grid-cols-1 gap-1 m-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2")}>
@@ -108,7 +108,8 @@ function Porfolio(props) {
                     style={customStyles}
                     isOpen={modalIsOpen}
                     onRequestClose={closeModal}>
-                    <div className="absolute flex top-5 space-x-4 cursor-pointer" onClick={closeModal}>
+                    <div className="absolute flex top-5 space-x-4 cursor-pointer" onClick={() => { closeModal(); document.body.classList.remove('overflow-hidden'); }} >
+                    
                         <svg className="w-6 h-6 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
                     </div>
                     <h2 className="text-4xl text-center mt-10"  >{porfolioList.at(modalData.currentIndex).title}</h2>
